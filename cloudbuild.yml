@@ -1,6 +1,6 @@
 steps:
 # This step runs the unit tests on the app
-- name: 'nginx:1.14.1-alpine'
+- name: 'angular'
   id: Test
   entrypoint: /bin/sh
   args:
