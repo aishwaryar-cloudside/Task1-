@@ -1,5 +1,26 @@
 steps:
+# This step runs the unit tests on the app
+- name: 'nginx:1.14.1-alpine'
+  id: Test
+  entrypoint: /bin/sh
+  args:
+  - -c
+  - 'pip install nginx'
+
+# This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular', '.' ]
-images:
-- 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular1'
+  id: Build
+  args:
+  - 'build'
+  - '-t'
+  - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+  - '.'
+
+# This step pushes the image to Artifact Registry
+# The PROJECT_ID and SHORT_SHA variables are automatically
+# replaced by Cloud Build.
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push
+  args:
+  - 'push'
+  - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
