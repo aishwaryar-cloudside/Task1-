@@ -15,8 +15,8 @@
   - 'angular=gcr.io/$vital-analogy-389705//angular:ms1'
 
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=eks-angular'
  
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
