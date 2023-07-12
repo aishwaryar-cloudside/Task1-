@@ -1,6 +1,6 @@
 #Build the image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/vital-analogy-389705/angula:ms1','.']
+  args: ['build','-t','gcr.io/vital-analogy-389705/angula:ms1']
 
 #Push the image  
 - name: 'gcr.io/cloud-builders/docker'
