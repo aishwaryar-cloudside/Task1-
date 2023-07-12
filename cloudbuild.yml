@@ -1,11 +1,10 @@
 steps:
 # This step runs the unit tests on the app
-- name: 'angular'
+- name: ' my-repository'
   id: Test
   entrypoint: /bin/sh
   args:
   - -c
-  - 'pip install nginx'
 
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
