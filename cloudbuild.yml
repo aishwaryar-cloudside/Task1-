@@ -1,6 +1,6 @@
 steps:
   # Step 1: Build Angular Application
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/Docker'
     args: ['build', '-t', 'angular', '.']
     dir: 'aishwaryar-cloudside-Task1--'
 
