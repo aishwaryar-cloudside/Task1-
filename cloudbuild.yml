@@ -2,7 +2,7 @@ steps:
   # Step 1: Build Angular Application
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'angular', '.']
-    dir: 'https://github.com/aishwaryar-cloudside/aishwaryar-cloudside-Task1--/tree/main/angularapp'
+    dir: 'https://github.com/aishwaryar-cloudside/aishwaryar-cloudside-Task1--/blob/main/Dockerfile'
 
   # Step 2: Deploy to Kubernetes
   - name: 'gcr.io/cloud-builders/kubectl'
