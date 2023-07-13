@@ -1,12 +1,8 @@
 steps:
   # Step 1: Build Angular Application
   - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
+    args: ['build']
     dir: 'aishwaryar-cloudside-Task1--'
-
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build']
-    dir: 'app'
 
   # Step 2: Deploy to Kubernetes
   - name: 'gcr.io/cloud-builders/kubectl'
