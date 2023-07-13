@@ -1,27 +1,26 @@
-steps:
-# This step runs the unit tests on the app
-- name: 'my-repository'
-  id: Test
-  entrypoint: /bin/sh
-  args:
-  - -c
+  steps:
+  # Step 1: Build Angular Application
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+    dir: 'aishwaryar-cloudside-Task1--
+'
 
-# This step builds the container image.
-- name: 'gcr.io/cloud-builders/docker'
-  id: Build
-  args:
-  - 'build'
-  - '-t'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/angular:ms1'
-  - '.'
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+    dir: 'app'
 
-# This step pushes the image to Artifact Registry
-# The PROJECT_ID and SHORT_SHA variables are automatically
-# replaced by Cloud Build.
-- name: 'gcr.io/cloud-builders/docker'
-  id: Push
-  args:
-  - 'push'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/angular:ms1'
-options:
-  logging: CLOUD_LOGGING_ONLY
+  # Step 2: Deploy to Kubernetes
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args:
+      - 'apply'
+      - '-f'
+      - 'Deployment.yml'
+      - '-f'
+      - 'service.yml'
+    dir: 'aishwaryar-cloudside-angulare-env-'
+
+# Replace 'deployment.yml' with the actual name of your deployment YAML file.
+# Replace 'service.yml' with the actual name of your service YAML file.
+# Adjust the directory paths ('app' and 'kubernetes') based on your repository structure.
+
+timeout: '600s'
