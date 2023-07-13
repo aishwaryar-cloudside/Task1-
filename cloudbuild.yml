@@ -19,7 +19,5 @@ steps:
     dir: 'aishwaryar-cloudside-angulare-env-'
 
 options:
-  logging: CLOUD_LOGGING_ONLY 
-  build:
-    logsBucket: _Default # Replace with your desired logs bucket name
+  logging: CLOUD_LOGGING_ONLY
 timeout: '600s'
