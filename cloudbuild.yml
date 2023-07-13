@@ -23,6 +23,6 @@
 # Replace 'service.yml' with the actual name of your service YAML file.
 # Adjust the directory paths ('app' and 'kubernetes') based on your repository structure.
 
-timeout: '600s'
 options:
   logging: CLOUD_LOGGING_ONLY
+timeout: '600s'
