@@ -19,5 +19,5 @@
       - 'service.yml'
     dir: 'aishwaryar-cloudside-angulare-env-'
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY 
 
