@@ -19,10 +19,6 @@
       - 'service.yml'
     dir: 'aishwaryar-cloudside-angulare-env-'
 
-# Replace 'deployment.yml' with the actual name of your deployment YAML file.
-# Replace 'service.yml' with the actual name of your service YAML file.
-# Adjust the directory paths ('app' and 'kubernetes') based on your repository structure.
-
 options:
   logging: CLOUD_LOGGING_ONLY
 
