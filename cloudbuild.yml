@@ -1,4 +1,4 @@
-  steps:
+steps:
   # Step 1: Build Angular Application
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
@@ -17,6 +17,9 @@
       - '-f'
       - 'service.yml'
     dir: 'aishwaryar-cloudside-angulare-env-'
+
 options:
   logging: CLOUD_LOGGING_ONLY 
+  build:
+    logsBucket: _Default # Replace with your desired logs bucket name
 timeout: '600s'
