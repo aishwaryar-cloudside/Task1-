@@ -3,7 +3,6 @@
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
     dir: 'aishwaryar-cloudside-Task1--'
-'
 
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
