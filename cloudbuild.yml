@@ -29,7 +29,7 @@ To create a Cloud Build trigger, you can use the following command:
 shell
 Copy code
 gcloud beta builds triggers create cloud-source-repositories \
-  --repo=your-aishwaryar-cloudside-Task1 \
+  --repo=aishwaryar-cloudside-Task1 \
   --branch-pattern="*" \
   --build-config=cloudbuild.yml
 
