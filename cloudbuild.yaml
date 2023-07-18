@@ -12,14 +12,14 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular'
     timeout: '600s'
 
   # Step 3: Pull Docker Image from Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'pull'
-      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular'
     timeout: '600s'
 
 options:
