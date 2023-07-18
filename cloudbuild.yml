@@ -3,7 +3,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'pull'
-      - 'angular'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
     timeout: '600s'
 
   # Step 2: Deploy to Kubernetes
