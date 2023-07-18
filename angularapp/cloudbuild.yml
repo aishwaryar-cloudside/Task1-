@@ -1,19 +1,27 @@
 steps:
-  # Step 1: Build Angular Application
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
-
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build']
-
-  # Step 2: Deploy to Kubernetes
-  - name: 'gcr.io/cloud-builders/kubectl'
+  # Step 1: Build Docker Image
+  - name: 'gcr.io/cloud-builders/docker'
     args:
-      - 'apply'
-      - '-f'
-      - 'Deployment.yml'
-      - '-f'
-      - 'service.yml'
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+      - '.'
+    timeout: '600s'
+
+  # Step 2: Push Docker Image to Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+    timeout: '600s'
+
+  # Step 3: Pull Docker Image from Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'pull'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+    timeout: '600s'
 
 options:
   logging: 'CLOUD_LOGGING_ONLY'
+
