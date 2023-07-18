@@ -5,10 +5,6 @@ steps:
       - 'pull'
       - 'angular'
     timeout: '600s'
-   
-    env:
-     - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
-     - 'CLOUDSDK_CONTAINER_CLUSTER=eks-angular'
 
   # Step 2: Deploy to Kubernetes
   - name: 'gcr.io/cloud-builders/kubectl'
@@ -20,16 +16,5 @@ steps:
       - 'service.yml'
     timeout: '600s'
 
-    env:
-     - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
-     - 'CLOUDSDK_CONTAINER_CLUSTER=eks-angular'
-
 options:
   logging: 'CLOUD_LOGGING_ONLY'
-
-
-
-
-
-
-
