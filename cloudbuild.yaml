@@ -4,7 +4,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular:ms1'
+      - 'us-central1-docker.pkg.dev/vital-analogy-389705/my-repository/angular'
       - '.'
     timeout: '600s'
 
