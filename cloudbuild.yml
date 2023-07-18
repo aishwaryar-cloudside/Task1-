@@ -18,20 +18,7 @@ steps:
 
 options:
   logging: 'CLOUD_LOGGING_ONLY'
-In this configuration:
 
-# Step 1: uses the gcr.io/cloud-builders/docker builder image to pull the pre-built Docker image. Replace 'your-image-name' with the name of the pre-built Docker image you want to use.
-# Make sure that your repository structure is set up correctly.Place the deployment and service yml files in the root directory of your repository.Adjust the configuration based on your specific requirements.
-To create a Cloud Build trigger, you can use the following command:
-
-shell
-Copy code
-gcloud beta builds triggers create cloud-source-repositories \
-  --repo=aishwaryar-cloudside-Task1 \
-  --branch-pattern="*" \
-  --build-config=cloudbuild.yml
-
-With this configuration and trigger, Cloud Build will automatically trigger a build and deployment to Kubernetes when changes are pushed to the specified branch in your repository.
 
 
 
